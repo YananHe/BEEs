@@ -13,10 +13,9 @@ InputParameters validParams<BeesApp>()
   return params;
 }
 
-BeesApp::BeesApp(const std::string & name, InputParameters parameters) :
-    MooseApp(name, parameters)
+BeesApp::BeesApp(InputParameters parameters) :
+    MooseApp(parameters)
 {
-  srand(processor_id());
 
   Moose::registerObjects(_factory);
   ModulesApp::registerObjects(_factory);
